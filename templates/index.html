@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <title>Python HTTP Server</title>
+      <style>
+          body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+          img { max-width: 80%; height: auto; border: 2px solid #ddd; padding: 5px; }
+          .env_var { font-size: 2em; color: #007bff; }
+      </style>
+  </head>
+  <body>
+      <h1>Dockerized app on ECS</h1>
+      <p class="env_var">Hello from ECS! Host: {{ container_hostname }}</p>
+  </body>
+  </html>
