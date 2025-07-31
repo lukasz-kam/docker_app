@@ -33,7 +33,7 @@ resource "aws_subnet" "public_b" {
 
 resource "aws_subnet" "private_a" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.1.3.0/24"
+  cidr_block        = "10.1.4.0/24"
   availability_zone = var.subnet_az_a
 
   tags = {
@@ -43,7 +43,7 @@ resource "aws_subnet" "private_a" {
 }
 
 module "ecr_repo" {
-  source     = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecr?ref=main"
+  source     = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecr?ref=v1.0.0"
   repo_name  = var.repo_name
   aws_region = var.aws_region
 }
