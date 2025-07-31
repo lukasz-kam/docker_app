@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+.terraform/
+*.tfplan
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+*.pem
