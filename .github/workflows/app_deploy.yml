@@ -3,7 +3,10 @@ name: Docker to ECR
 on:
   push:
     branches:
-      - feature/deployment-pipeline
+      - main
+    paths:
+    - 'app/**'
+    - 'Dockerfile'
 
 env:
   ECR_REPOSITORY: python-repo
