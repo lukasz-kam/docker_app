@@ -42,3 +42,15 @@ variable "repo_name" {
   type        = string
   default     = "python-repo"
 }
+
+variable "cluster_name" {
+  description = "Name for the ECS cluster."
+  type        = string
+  default     = "main-cluster"
+}
+
+variable "container_image" {
+  description = "Name of the docker image."
+  type        = string
+  default     = "038462790533.dkr.ecr.eu-central-1.amazonaws.com/python-repo:6969c04929d3be9499969ca9d6389ff67276e9a6"
+}
