@@ -69,7 +69,7 @@ module "ecr_repo" {
 }
 
 module "ecs_cluster" {
-  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecs_cluster?ref=v1.2.2"
+  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecs_cluster?ref=v1.2.7"
 
   cluster_name        = var.cluster_name
   aws_region          = var.aws_region
