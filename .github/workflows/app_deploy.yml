@@ -76,7 +76,7 @@ jobs:
         with:
           task-definition: app/task-definition.json
           container-name: main-cluster2-container
-          image: ${{ steps.build-image.outputs.image }}
+          image: ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
