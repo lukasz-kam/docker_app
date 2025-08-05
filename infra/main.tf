@@ -69,7 +69,7 @@ module "ecr_repo" {
 }
 
 module "ecs_cluster" {
-  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecs_cluster?ref=v2.0.0"
+  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecs_cluster?ref=v1.2.11"
 
   cluster_name        = var.cluster_name
   vpc_id              = aws_vpc.main.id
@@ -77,4 +77,7 @@ module "ecs_cluster" {
   private_subnets_ids = [aws_subnet.private_a.id]
   ami_id              = data.aws_ami.amazon.id
   instance_type       = "t2.micro"
+  container_image     = var.container_image
+  max_asg             = 2
+  desired_asg         = 1
 }

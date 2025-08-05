@@ -1,0 +1,50 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:038462790533:task-definition/main-cluster2-task-def:1",
+    "containerDefinitions": [
+        {
+            "name": "main-cluster2-container",
+            "image": "038462790533.dkr.ecr.eu-central-1.amazonaws.com/python-repo:6969c04929d3be9499969ca9d6389ff67276e9a6",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "systemControls": []
+        }
+    ],
+    "family": "main-cluster2-task-def",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "256",
+    "memory": "300",
+    "registeredAt": "2025-08-05T16:47:38.542Z",
+    "registeredBy": "arn:aws:sts::038462790533:assumed-role/TerraformRole/GitHubActionsSession",
+    "tags": []
+}
