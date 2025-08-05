@@ -49,6 +49,7 @@ jobs:
           docker run --rm -i hadolint/hadolint < Dockerfile
 
       - name: Build Docker image
+        id: build-image
         run: |
           docker build -t ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} .
 
