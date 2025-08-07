@@ -54,3 +54,13 @@ variable "container_image" {
   type        = string
   default     = "038462790533.dkr.ecr.eu-central-1.amazonaws.com/python-repo:6969c04929d3be9499969ca9d6389ff67276e9a6"
 }
+
+variable "domain_name" {
+  description = "The domain of the existing Route 53 hosted zone."
+  type        = string
+
+  validation {
+    condition     = length(regexall("\\.", var.domain_name)) >= 1 && !can(regex("\\s", var.domain_name))
+    error_message = "The domain name must contain at least one dot (e.g., 'example.com') and cannot contain spaces."
+  }
+}

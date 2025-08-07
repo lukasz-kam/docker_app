@@ -69,15 +69,16 @@ module "ecr_repo" {
 }
 
 module "ecs_cluster" {
-  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecs_cluster?ref=v1.2.11"
+  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/ecs_cluster?ref=v1.3.3"
 
-  cluster_name        = var.cluster_name
-  vpc_id              = aws_vpc.main.id
-  public_subnets_ids  = [aws_subnet.public_a.id, aws_subnet.public_b.id]
-  private_subnets_ids = [aws_subnet.private_a.id]
-  ami_id              = data.aws_ami.amazon.id
-  instance_type       = "t2.micro"
-  container_image     = var.container_image
-  max_asg             = 2
-  desired_asg         = 1
+  cluster_name           = var.cluster_name
+  vpc_id                 = aws_vpc.main.id
+  public_subnets_ids     = [aws_subnet.public_a.id, aws_subnet.public_b.id]
+  private_subnets_ids    = [aws_subnet.private_a.id]
+  ami_id                 = data.aws_ami.amazon.id
+  instance_type          = "t2.micro"
+  container_image        = var.container_image
+  max_asg                = 2
+  desired_asg            = 1
+  redirect_http_to_https = true
 }
