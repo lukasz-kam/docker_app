@@ -4,7 +4,7 @@ data "aws_route53_zone" "main" {
 }
 
 module "cloudfront" {
-  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/cloudfront?ref=v1.3.0"
+  source = "git@git.epam.com:lukasz_kaminski1/terraform-modules.git//modules/cloudfront?ref=v1.3.4"
 
   domain_name     = var.domain_name
   domain_prefix   = "ecs"
